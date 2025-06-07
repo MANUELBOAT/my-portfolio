@@ -1,0 +1,348 @@
+body {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+    margin: 0;
+    color: #223;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+body {
+    background:
+        linear-gradient(rgba(34, 34, 34, 0.45), rgba(33, 150, 243, 0.27)),
+        url('pexels-julia-m-cameron-4144923.jpg') center center no-repeat fixed;
+    background-size: 100%;
+}
+
+@media (min-width: 600px) {
+    body {
+        background-size: 100%;
+    }
+}
+
+
+/* Floating animated background circles */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::before {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at 60% 40%, #2196f3 0%, #fff 70%);
+    top: -120px;
+    left: -120px;
+    animation: float1 18s ease-in-out infinite alternate;
+}
+body::after {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at 40% 60%, #43e97b 0%, #38f9d7 80%);
+    bottom: -90px;
+    right: -90px;
+    animation: float2 16s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+    0%   { transform: translateY(0) scale(1);}
+    100% { transform: translateY(40px) scale(1.1);}
+}
+@keyframes float2 {
+    0%   { transform: translateY(0) scale(1);}
+    100% { transform: translateY(-30px) scale(1.08);}
+}
+
+/* Navigation Bar with animated underline */
+nav {
+    background: #222;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.12rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    position: relative;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+    overflow: hidden;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 3px;
+    height: 2px;
+    background: linear-gradient(90deg, #43e97b 0%, #2196f3 80%);
+    transform: scaleX(0);
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    transform-origin: left;
+}
+nav a:hover, nav a:focus {
+    background: #2196f3;
+    color: #fff;
+    transform: scale(1.09);
+}
+nav a:hover::after, nav a:focus::after {
+    transform: scaleX(1);
+}
+
+/* Main Content */
+main {
+    max-width: 750px;
+    margin: 2.5rem auto 2rem auto;
+    padding: 2.5rem 2rem;
+    background: rgba(255,255,255,0.98);
+    border-radius: 18px;
+    box-shadow: 0 6px 36px rgba(33,150,243,0.09);
+    animation: fadeInUp 1s;
+    position: relative;
+    z-index: 10;
+    will-change: box-shadow, transform;
+    transition: box-shadow 0.22s cubic-bezier(0.4,0,0.2,1), transform 0.22s;
+}
+
+main:hover {
+    box-shadow: 0 8px 36px rgba(33,150,243,0.18), 0 1.5px 0 rgba(33,150,243,0.23);
+    transform: translateY(-2px) scale(1.01);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInOnScroll 1.2s forwards;
+}
+@keyframes fadeInOnScroll {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #2196f3;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    animation: popIn 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes popIn {
+    0% {transform: scale(0.9); opacity: 0;}
+    100% {transform: scale(1); opacity:1;}
+}
+h2 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 0.4rem;
+    animation: fadeInUp 0.7s;
+}
+h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+/* General Elements */
+p, li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+ul {
+    padding-left: 1.4rem;
+}
+
+section {
+    margin-bottom: 2.2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e0eafc;
+    background: #f7faff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(33,150,243,0.06);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+    transition: box-shadow 0.18s, background 0.23s;
+    will-change: box-shadow, background;
+    animation: fadeInUp 1.2s;
+}
+
+section:hover {
+    box-shadow: 0 6px 24px rgba(33,150,243,0.13);
+    background: #e9f5ff;
+    transform: scale(1.01) translateY(-2px);
+}
+
+/* Button Styles */
+.button,
+a.button {
+    display: inline-block;
+    padding: 0.55rem 1.3rem;
+    background: linear-gradient(90deg, #43e97b 0%, #2196f3 100%);
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.8rem;
+    transition: background 0.25s, box-shadow 0.23s, transform 0.18s;
+    box-shadow: 0 2px 10px rgba(33,150,243,0.10);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.button::after, a.button::after {
+    content: '';
+    position: absolute;
+    left: -75%;
+    top: 0; bottom: 0;
+    width: 50%;
+    background: rgba(255,255,255,0.32);
+    transform: skewX(-24deg);
+    transition: left 0.7s cubic-bezier(0.4,0,0.2,1);
+    z-index: 1;
+}
+.button:hover::after, a.button:hover::after {
+    left: 120%;
+}
+.button:hover, a.button:hover {
+    background: linear-gradient(90deg, #2196f3 0%, #43e97b 100%);
+    box-shadow: 0 4px 18px rgba(33,150,243,0.22);
+    transform: translateY(-2px) scale(1.05);
+}
+
+a[download] {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.5rem 1.15rem;
+    background: #1766a3;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 1px 5px rgba(33,150,243,0.10);
+    transition: background 0.18s, transform 0.10s;
+    position: relative;
+    overflow: hidden;
+}
+a[download]:hover {
+    background: #43a0f7;
+    transform: scale(1.04);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    main {
+        padding: 1.2rem 0.8rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    section {
+        padding: 0.8rem;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+    background: #f7faff;
+}
+::-webkit-scrollbar-thumb {
+    background: #2196f3;
+    border-radius: 7px;
+}
+
+/* Contact Page Specific */
+ul li a[href^="mailto:"]::before {
+    content: "✉️ ";
+}
+ul li a[href^="https://linkedin."]::before {
+    content: "💼 ";
+}
+
+/* Animate fade-in on scroll using JS helper class */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInOnScroll 1.2s forwards;
+}
+@keyframes fadeInOnScroll {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* Add to your style.css */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  overflow: auto;
+  background: rgba(34,34,34,0.5);
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 2rem;
+  color: #2196f3;
+  cursor: pointer;
+}
+#passenger-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+#passenger-table th, #passenger-table td {
+  border: 1px solid #e0eafc;
+  padding: 0.5rem;
+  text-align: left;
+}

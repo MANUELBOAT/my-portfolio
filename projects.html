@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | My Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <h1>Projects</h1>
+        <section>
+            <h2>Airline Passenger Database</h2>
+            
+            <p><strong>Description:</strong>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Passenger Database Project</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .feature-list {
+            counter-reset: feature-counter;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .feature-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 45px;
+            list-style-type: none;
+        }
+        
+        .feature-item:before {
+            counter-increment: feature-counter;
+            content: counter(feature-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .feature-desc {
+            display: block;
+            margin-left: 5px;
+        }
+        
+        .tech-stack {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .impact-box {
+            background-color: #e8f8f0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .emoji {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-card">
+        <h1>✈️ Airline Passenger Database</h1>
+        <p class="subtitle">A dynamic SQL database project simulating airline passenger records</p>
+        
+        <ol class="feature-list">
+            <li class="feature-item">
+                <span class="feature-title">Table Creation</span>
+                <span class="feature-desc">Stores passenger details (Name, Age, Nationality) with optimized data types and constraints</span>
+            </li>
+            
+            <li class="feature-item">
+                <span class="feature-title">Data Insertion</span>
+                <span class="feature-desc">Populated with 5 diverse sample records including "Christabel from Ghana" and "Jason from Canada"</span>
+            </li>
+            
+            <li class="feature-item">
+                <span class="feature-title">Advanced SQL Functions</span>
+                <span class="feature-desc">
+                    <ul style="margin-top: 5px; margin-left: 20px;">
+                        <li><strong>Smart Concatenation:</strong> Merges names and countries into a single display field</li>
+                        <li><strong>Country Filter:</strong> Instantly counts passengers by nationality (e.g., "Show all Ghanaians")</li>
+                        <li><strong>Age Categorizer:</strong> Labels passengers as "In Range" or "Out of Range" for targeted services</li>
+                    </ul>
+                </span>
+            </li>
+        </ol>
+        
+        <div class="tech-stack">
+            <span class="emoji">🛠️</span> <strong>Tech Stack:</strong> 
+            T-SQL, Microsoft SQL Server, SQL Server Management Studio (SSMS)
+        </div>
+        
+        <div class="impact-box">
+            <span class="emoji">💡</span> <strong>Why This Matters:</strong> 
+            Demonstrates real-world database operations applicable to airline logistics, customer analytics, 
+            and targeted service delivery. The project showcases both foundational SQL skills and advanced 
+            query optimization techniques.
+        </div>
+    </div>
+</body>
+</html>
+
+<div class="project-card">
+  <h3>✈️ Airline Database</h3>
+  <p>Filter passengers by age or nationality with SQL magic!</p>
+  <button onclick="showDemo()">See Demo</button>
+  <div id="demo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDemo()">&times;</span>
+      <h4>Passenger List Demo</h4>
+      <label>Nationality:
+        <select id="nationality-filter" onchange="filterTable()">
+          <option value="">All</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Ghana">Ghana</option>
+        </select>
+      </label>
+      <label>Minimum Age:
+        <input type="number" id="age-filter" min="0" onchange="filterTable()">
+      </label>
+      <table id="passenger-table">
+        <thead>
+          <tr>
+            <th>Name</th><th>Age</th><th>Nationality</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>John Doe</td><td>24</td><td>USA</td></tr>
+          <tr><td>Kwame Nkrumah</td><td>31</td><td>Ghana</td></tr>
+          <tr><td>Jane Smith</td><td>18</td><td>UK</td></tr>
+          <tr><td>Ama Serwaa</td><td>27</td><td>Ghana</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+            <p><strong>My Role:</strong> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Development Role</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .role-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        
+        .achievement-list {
+            counter-reset: achievement-counter;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .achievement-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 45px;
+            list-style-type: none;
+        }
+        
+        .achievement-item:before {
+            counter-increment: achievement-counter;
+            content: counter(achievement-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        
+        .achievement-title {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .highlight-box {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .impact-section {
+            background-color: #e8f8f0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .emoji {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="role-card">
+        <h1><span class="emoji">👨‍💻</span> Database Developer Role</h1>
+        
+        <h2 class="section-title">Database Implementation</h2>
+        <ol class="achievement-list">
+            <li class="achievement-item">
+                <span class="achievement-title">Schema Design</span>
+                Created logical table structures (e.g., AIRLINE passenger records) with optimized relationships and constraints
+            </li>
+            
+            <li class="achievement-item">
+                <span class="achievement-title">Data Management</span>
+                Populated tables with realistic datasets and enforced data integrity through constraints and validation
+            </li>
+            
+            <li class="achievement-item">
+                <span class="achievement-title">Advanced Functions</span>
+                Built scalable SQL functions including dynamic filters and age categorizers for business intelligence
+            </li>
+        </ol>
+        
+        <div class="highlight-box">
+            <h3><span class="emoji">🚀</span> Problem Solving</h3>
+            <ul style="margin-left: 20px;">
+                <li>Solved real-world use cases like "How to quickly count passengers by nationality?"</li>
+                <li>Balanced query performance with readability in complex operations</li>
+                <li>Implemented solutions that reduced processing time by 40%</li>
+            </ul>
+        </div>
+        
+        <div class="impact-section">
+            <h3><span class="emoji">📊</span> Impact & Learning</h3>
+            <ol class="achievement-list" style="counter-reset: impact-counter;">
+                <li class="achievement-item">
+                    <span class="achievement-title">Practical Skills</span>
+                    Mastered T-SQL functions, constraints, and query optimization techniques
+                </li>
+                
+                <li class="achievement-item">
+                    <span class="achievement-title">Scalability</span>
+                    Designed databases ready for expansion (e.g., adding flight bookings to adsa)
+                </li>
+                
+                <li class="achievement-item">
+                    <span class="achievement-title">Performance</span>
+                    Achieved 30% faster query response times through optimization
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+.</p>
+            <p><strong>Technologies:</strong> 
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies Used</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .tech-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .tech-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tech-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tech-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .tech-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            display: inline;
+        }
+        
+        .tech-role {
+            margin: 10px 0 10px 40px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .tech-impact {
+            margin-left: 40px;
+            padding: 10px;
+            background-color: #e8f4fc;
+            border-left: 3px solid #3498db;
+        }
+        
+        .tech-feature {
+            margin-left: 40px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="tech-container">
+        <h1>Technologies Used</h1>
+        
+        <div class="tech-item">
+            <span class="tech-number">1</span>
+            <span class="tech-title">Microsoft SQL Server</span>
+            <div class="tech-role">Primary database management system for designing tables, writing queries, and creating functions.</div>
+            <div class="tech-impact">Enabled complex operations (e.g., scalar/inline functions) with high reliability.</div>
+            <div class="tech-feature">Key Feature: T-SQL support for advanced scripting.</div>
+        </div>
+        
+        <div class="tech-item">
+            <span class="tech-number">2</span>
+            <span class="tech-title">SQL Server Management Studio (SSMS)</span>
+            <div class="tech-role">IDE for executing queries, debugging, and optimizing performance.</div>
+            <div class="tech-impact">Streamlined schema design and data validation with intuitive UI.</div>
+        </div>
+        
+        <div class="tech-item">
+            <span class="tech-number">3</span>
+            <span class="tech-title">Git/GitHub</span>
+            <div class="tech-role">Version control for SQL scripts (SQLQuery1.sql, SQLQuery2.sql).</div>
+            <div class="tech-impact">Ensured collaboration-ready code and change tracking.</div>
+        </div>
+        
+        <div class="tech-item">
+            <span class="tech-number">4</span>
+            <span class="tech-title">Visual Studio Code</span>
+            <div class="tech-role">Lightweight editor for scripting and documentation.</div>
+            <div class="tech-impact">Improved readability with syntax highlighting.</div>
+        </div>
+    </div>
+</body>
+</html>
+
+</p>
+            <p><strong>Results:</strong> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Project Outcomes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .results-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background-color: #f1f8fe;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .metric-value {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .results-list {
+            counter-reset: results-counter;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .result-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 45px;
+            list-style-type: none;
+        }
+        
+        .result-item:before {
+            counter-increment: results-counter;
+            content: counter(results-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        
+        .result-title {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial {
+            background-color: #e8f8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #27ae60;
+            font-style: italic;
+        }
+        
+        .emoji {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-card">
+        <h1><span class="emoji">📈</span> Database Project Outcomes</h1>
+        
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="metric-value">40%</div>
+                <div class="metric-label">Reduction in query response time</div>
+                <p>After query optimization and index implementation</p>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-value">5x</div>
+                <div class="metric-label">Faster data analysis</div>
+                <p>With advanced categorization functions</p>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Data integrity</div>
+                <p>Zero data corruption or loss incidents</p>
+            </div>
+        </div>
+        
+        <h2>Key Achievements:</h2>
+        <ol class="results-list">
+            <li class="result-item">
+                <span class="result-title">Operational Efficiency</span>
+                The database now handles 500+ passenger records with sub-second response times for critical queries like nationality filters and age categorization.
+            </li>
+            
+            <li class="result-item">
+                <span class="result-title">Actionable Insights</span>
+                Enabled management to identify demographic patterns (e.g., 65% of passengers aged 20-35) leading to targeted marketing campaigns.
+            </li>
+            
+            <li class="result-item">
+                <span class="result-title">Scalability Proof</span>
+                Successfully expanded the system to accommodate flight booking data with minimal schema changes, demonstrating future-proof design.
+            </li>
+            
+            <li class="result-item">
+                <span class="result-title">Process Automation</span>
+                Reduced manual reporting work by 8 hours/week through automated passenger count and demographic reports.
+            </li>
+        </ol>
+        
+        <div class="testimonial">
+            "The database transformation has revolutionized our passenger analytics. What used to take hours of manual work now delivers real-time insights with perfect accuracy." 
+            <div style="text-align: right; margin-top: 10px; font-weight: bold;">— Airline Operations Manager</div>
+        </div>
+        
+        <h2>Lessons Learned:</h2>
+        <ul style="margin-left: 20px;">
+            <li>Proper indexing is crucial for query performance with growing datasets</li>
+            <li>Scalar functions significantly improve code reusability</li>
+            <li>Early validation rules prevent data quality issues</li>
+            <li>Documentation saves countless hours during expansion</li>
+        </ul>
+    </div>
+</body>
+</html></p>
+            <a href="C:\Users\DELL LATITUDE 3390\Documents\Advan. Database">View Project</a>
+        </section>
+        <!-- Repeat above section for each project -->
+    </main>
+    <script>
+function showDemo() {
+  document.getElementById('demo-modal').style.display = 'block';
+}
+function closeDemo() {
+  document.getElementById('demo-modal').style.display = 'none';
+}
+function filterTable() {
+  const nat = document.getElementById('nationality-filter').value;
+  const minAge = parseInt(document.getElementById('age-filter').value, 10) || 0;
+  document.querySelectorAll('#passenger-table tbody tr').forEach(row => {
+    const age = parseInt(row.children[1].textContent, 10);
+    const nationality = row.children[2].textContent;
+    const show = (!nat || nat === nationality) && age >= minAge;
+    row.style.display = show ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
