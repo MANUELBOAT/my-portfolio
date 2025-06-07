@@ -629,7 +629,7 @@
     </div>
 </body>
 </html></p>
-            <a href="C:\Users\DELL LATITUDE 3390\Documents\Advan. Database">View Project</a>
+            <a href="https://github.com/MANUELBOAT/my-portfolio/blob/main/SQLQuery1.sql" target="_blank">View Project</a>
         </section>
         <!-- Repeat above section for each project -->
     </main>
@@ -649,6 +649,32 @@ function filterTable() {
     const show = (!nat || nat === nationality) && age >= minAge;
     row.style.display = show ? '' : 'none';
   });
+}
+<!-- Example for one project card in projects.html -->
+<div class="project-card">
+  <h3>✈️ Airline Database</h3>
+  <p>Filter passengers by age or nationality with SQL magic!</p>
+  <button onclick="toggleProjectDetails(this)">View Project</button>
+  <div class="project-details" style="display: none;">
+    <ul>
+      <li>Built with: SQL, Python (Pandas), SQLite</li>
+      <li>Features: Filter, search, and sort airline passengers</li>
+      <li>Demo: <a href="#">Try Sample Demo</a></li>
+      <li>Code: <a href="https://github.com/YOUR_GITHUB/airline-db" target="_blank">GitHub Repo</a></li>
+    </ul>
+  </div>
+</div>
+</script>
+<script>
+function toggleProjectDetails(button) {
+  const details = button.nextElementSibling;
+  if (details.style.display === "none" || details.style.display === "") {
+    details.style.display = "block";
+    button.textContent = "Hide Project";
+  } else {
+    details.style.display = "none";
+    button.textContent = "View Project";
+  }
 }
 </script>
 </body>
