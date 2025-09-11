@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizations</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: url('pexels-julia-m-cameron-4144923.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-pane {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      padding: 40px 30px 50px 30px;
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 750px;
+    }
+
+    .cover-pane {
+      background: linear-gradient(135deg, #0093E9cc 0%, #80D0C7cc 100%);
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      padding: 40px 60px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .cover-title {
+      color: #fff;
+      font-size: 2.3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .cover-desc {
+      color: #eaf6fb;
+      font-size: 1.15rem;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .vertical-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 700px;
+      gap: 40px;
+    }
+
+    .image-box {
+      text-align: center;
+      width: 100%;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 650px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #333;
+      font-weight: 500;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    }
+
+    .viz-text {
+      text-align: left;
+      margin: 30px auto 0 auto;
+      max-width: 650px;
+      color: #222;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      background: #f7fbfd;
+      border-radius: 12px;
+      padding: 28px 28px 18px 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .viz-text h2 {
+      color: #0093E9;
+      font-size: 1.35rem;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    }
+
+    .viz-text h3 {
+      color: #222;
+      font-size: 1.1rem;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    }
+
+    .viz-text ul {
+      margin: 0 0 10px 20px;
+      padding: 0;
+    }
+
+    .viz-text li {
+      margin-bottom: 6px;
+    }
+
+    .viz-text strong {
+      color: #0093E9;
+      font-weight: 600;
+    }
+
+    /* Custom font for special captions */
+    .caption-special {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #1a3a4a;
+      background: #f0f7fa;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 14px;
+      margin-bottom: 0;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      line-height: 1.7;
+    }
+    .caption-special strong {
+      color: #0093E9;
+      font-weight: 700;
+    }
+  </style>
+  <!-- Google Fonts for Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-pane">
+    <div class="cover-pane">
+      <div class="cover-title">NBA Scheduling Trends Visualizations</div>
+      <div class="cover-desc">
+        Explore key data visualizations showing the evolution of NBA game scheduling, including back-to-back trends and primetime shifts.
+      </div>
+    </div>
+    <div class="vertical-stack">
+      <div class="image-box">
+        <img src="pro 1.png" alt="Original Image">
+        <div class="caption">Visualization 1</div>
+      </div>
+      <div class="viz-text">
+        <h2>Scheduling Trends in Professional Basketball</h2>
+        <p>
+          How the game calendar has evolved to balance athlete health, fan engagement, and broadcast value.
+        </p>
+        <h3>Trend 1: The Decline of Back-to-Back Games</h3>
+        <ul>
+          <li>
+            In earlier seasons, teams often played on consecutive nights, creating fatigue, increased injury risk, and leading to “load management” (star players resting in marquee games).
+          </li>
+          <li>
+            <strong>What the data shows:</strong> Average back-to-back games per team have steadily declined across seasons.<br>
+            Example: from <strong>X</strong> back-to-backs per team in Season A → down to <strong>Y</strong> in Season B.<br>
+            That’s a reduction of <strong>Z%</strong> overall.
+          </li>
+          <li>
+            <strong>Why it matters:</strong> The league deliberately spread out games to reduce player fatigue, resulting in higher quality play and a better fan experience.
+          </li>
+        </ul>
+        <em>(Visual 1: Line chart showing decline in average back-to-backs per team by season, with annotations at start and end.)</em>
+        <h3>Trend 2: The Shift in Game-Night Scheduling</h3>
+        <ul>
+          <li>
+            Traditionally, weekends (Friday & Saturday) dominated the schedule. But the distribution of game nights has changed.
+          </li>
+          <li>
+            <strong>What the data shows:</strong> Wednesday games increased by <strong>+X%</strong> of the total schedule. Saturday games decreased by <strong>Y%</strong>. Sundays remained stable as another marquee day.
+          </li>
+          <li>
+            <strong>Why it matters:</strong> The league created “Primetime Wednesday” to maximize national TV exposure. Spreading big games across the week prevents weekend overcrowding and keeps fans engaged throughout.
+          </li>
+        </ul>
+        <em>(Visual 2: Multi-line plot showing % of games by day of week across seasons, focusing on Wed/Sat/Sun.)</em>
+      </div>
+      <div class="image-box">
+        <img src="pro 3.png" alt="Data Visualization 1">
+        <div class="caption-special">
+          <strong>Schedule Visualization: Oklahoma City Thunder (OKC)</strong><br><br>
+          <ul>
+            <li>
+              <strong>Balanced Home & Away:</strong> The schedule alternates between home (green) and road (red) games, providing a steady rhythm for the team.
+            </li>
+            <li>
+              <strong>Back-to-Backs:</strong> Orange diamonds indicate back-to-back games. OKC has fewer than average, allowing for more recovery time.
+            </li>
+            <li>
+              <strong>Homestand Highlight:</strong> A 5-game homestand in February gives OKC a valuable stretch at home, reducing travel fatigue.
+            </li>
+            <li>
+              <strong>Game Density:</strong> The histogram below shows a well-distributed schedule with consistent rest windows, except for a busy two-week stretch in January.
+            </li>
+          </ul>
+          <strong>Why it matters:</strong> Fewer back-to-backs and a balanced schedule give OKC a smoother season rhythm and a potential competitive edge.
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="pro 5.png" alt="Data Visualization 2">
+        <div class="caption-special">
+          <strong>Schedule Impact Analysis (2019–2024)</strong><br><br>
+          <ul>
+            <li>
+              <strong>Goal:</strong> Estimate how many regular season wins each NBA team gained or lost due to schedule-related factors (opponent strength, back-to-backs, rest days, travel).
+            </li>
+            <li>
+              <strong>Model:</strong> Regression analysis using talent, opponent strength, travel miles, and back-to-backs as predictors.
+            </li>
+            <li>
+              <strong>Key Findings:</strong>
+              <ul>
+                <li>Some teams gained up to <strong>+7.5 wins</strong> from favorable schedules, while others lost up to <strong>−8.2 wins</strong> due to tougher conditions.</li>
+                <li>Schedule swings can impact playoff seeding and team performance by an average of ±1.5 wins per season.</li>
+                <li>Biggest factors: opponent timing, travel, and back-to-backs.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Practical Implication:</strong> Teams and front offices should consider schedule context when evaluating performance and planning strategy.
+            </li>
+          </ul>
+          <strong>Visualization:</strong> Bar chart shows which teams benefited (green) or were hurt (red) by the schedule.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
